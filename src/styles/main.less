@@ -1,0 +1,50 @@
+@import "colors";
+@import "header";
+@import "section";
+@import "maps.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: #fonts[fontePrincipal];
+}
+
+body {
+    background-color: @colorBody;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointMobile {
+        .products {
+            display: block;
+    
+            &-item {
+                margin-bottom: 32px;
+            }
+        }
+    }
+    
+    @media @breakpointTablet {
+        .container {
+            max-width: 80%;
+        }
+    
+        .products {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
+}
